@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon A. Baki - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Print optimization to ensure it fits strictly on one A4 page */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        @media print {
+            body { background-color: white; }
+            .shadow-2xl { box-shadow: none !important; }
+            .print-container {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body class="py-10 print:py-0 flex justify-center text-gray-800">
+
+    <!-- Print / Save as PDF Button -->
+    <button onclick="window.print()" class="fixed top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg print:hidden flex items-center gap-2 z-50 transition-colors cursor-pointer">
+        <i data-lucide="printer" class="w-5 h-5"></i>
+        <span>Save as PDF</span>
+    </button>
+
+    <!-- CV Container -->
+    <div class="print-container bg-white shadow-2xl max-w-5xl w-full flex flex-col md:flex-row mx-auto overflow-hidden min-h-[1056px]">
+        
+        <!-- Left Sidebar -->
+        <aside class="w-full md:w-[32%] bg-[#1e293b] text-white p-8 flex flex-col gap-8 print:h-[297mm]">
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center mt-2">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-slate-400 shadow-lg">
+                    <img src="unnamed.png" alt="Brandon A. Baki" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <section class="flex flex-col gap-4">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-2">Contact</h2>
+                <div class="flex flex-col gap-3 text-sm">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-slate-300"></i>
+                        <span>+971 50 789 6519</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i>
+                        <a href="mailto:brandon.abaki@gmail.com" class="hover:text-blue-300 transition-colors">brandon.abaki@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-slate-300"></i>
+                        <span>Abu Dhabi, UAE</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="globe" class="w-4 h-4 text-slate-300"></i>
+                        <span>United States of America</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="flex flex-col gap-4">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-2">Education</h2>
+                <div class="flex flex-col gap-4 text-sm">
+                    <div>
+                        <h3 class="font-bold text-white text-base">M.Ed in Education</h3>
+                        <p class="text-slate-300">University of Wollongong</p>
+                        <p class="text-slate-400 text-xs mt-0.5">Expected 2026</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">BA in Education</h3>
+                        <p class="text-slate-300">American University of Beirut</p>
+                        <p class="text-slate-400 text-xs mt-0.5">2014</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Toolkit / Skills -->
+            <section class="flex flex-col gap-4">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-2">My Toolkit</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Strategic Planning</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Curriculum Design</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Data Analysis</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">EdTech Strategy</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">AI Integration</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Instructional Coaching</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Quality Assurance</span>
+                    <span class="px-2.5 py-1 bg-slate-700 text-xs rounded-md font-medium">Teacher Development</span>
+                </div>
+            </section>
+
+            <!-- Philosophy -->
+            <section class="flex flex-col gap-4 mt-auto pb-4">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-2">Philosophy</h2>
+                <p class="text-sm text-slate-300 leading-relaxed italic">
+                    "Empower educators with trust, tools, and data-driven insights. By fostering a culture of psychological safety and championing evidence-based practices, I create an ecosystem where everyone is inspired to achieve their highest potential. I do this by building collaborative and trusting relationships with colleagues to deeply inspire progress."
+                </p>
+            </section>
+
+        </aside>
+
+        <!-- Right Main Content -->
+        <main class="w-full md:w-[68%] p-10 print:h-[297mm] flex flex-col gap-8 bg-white">
+            
+            <!-- Header -->
+            <header class="border-b border-gray-200 pb-6">
+                <h1 class="text-5xl font-extrabold text-slate-800 tracking-tight">BRANDON A. BAKI</h1>
+                <h2 class="text-xl font-medium text-blue-600 tracking-widest mt-2 uppercase">Senior Educational Leader</h2>
+            </header>
+
+            <!-- Executive Summary -->
+            <section>
+                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <i data-lucide="user" class="w-5 h-5 text-blue-600"></i> Executive Summary
+                </h3>
+                <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                    A key contributor to institutional transformation. With nearly a decade of experience in education in the UAE, I specialize in deploying data-driven strategy, pioneering AI-powered pedagogy, and empowering high-performing academic teams. My leadership bridges visionary planning with decisive execution to achieve ambitious goals, thus improving the quality of student learning experiences.
+                </p>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="flex flex-col gap-5 flex-1">
+                <h3 class="text-lg font-bold text-slate-800 mb-1 flex items-center gap-2 border-b border-gray-100 pb-2">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-blue-600"></i> Professional Experience
+                </h3>
+
+                <!-- Job 1 -->
+                <div class="relative pl-4 border-l-2 border-slate-200">
+                    <div class="absolute w-3 h-3 bg-blue-600 rounded-full -left-[7px] top-1.5 border-2 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">(K-12) Head of Curriculum / Head of Teaching & Learning</h4>
+                            <h5 class="text-sm text-blue-600 font-medium">Athena Education (Al Wahda Private School) | Sharjah, UAE</h5>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">2025 - Present</span>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 ml-1">
+                        <li>Pioneered the school's first AI Integration Plan from concept to initiation.</li>
+                        <li>Engineered an evidence-based coaching and professional development framework.</li>
+                        <li>Raised student engagement by 26% across K-12 classrooms through carefully targeted training strategies.</li>
+                        <li>Key contributor to the School Improvement Plan (SIP) and Self-Evaluation Form (SEF).</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-4 border-l-2 border-slate-200">
+                    <div class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[7px] top-1.5 border-2 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">PYP Educator / Teaching & Learning Policy Lead</h4>
+                            <h5 class="text-sm text-blue-600 font-medium">Emirates National Schools | Sharjah, UAE</h5>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">2024 - 2025</span>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 ml-1">
+                        <li>Key contributor to initiatives that elevated the school's SPEA rating from 'Good' to 'Very Good'.</li>
+                        <li>Chaired the Teaching & Learning Policy Review Team, modernizing pedagogical standards.</li>
+                        <li>Conducted data-tracking action research on the impact of AI tools; collected feedback showing an 82% satisfaction rate among students.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-4 border-l-2 border-slate-200">
+                    <div class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[7px] top-1.5 border-2 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">Head of Elite Stream</h4>
+                            <h5 class="text-sm text-blue-600 font-medium">Emirates Schools Establishment | Sharjah, UAE</h5>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">2020 - 2023</span>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 ml-1">
+                        <li>Collaborated directly with the cluster manager to design and implement data-driven school improvement initiatives, leading to an 11% increase in MAP scores.</li>
+                        <li>Elevated student attainment by 17% across 2 schools by designing and providing needs-based, goal-oriented professional development to teachers.</li>
+                        <li>Spearheaded the student recruitment process for the Elite Stream across 2 ESE schools, dealing directly with parents.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="relative pl-4 border-l-2 border-slate-200">
+                    <div class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[7px] top-1.5 border-2 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">English Teacher</h4>
+                            <h5 class="text-sm text-blue-600 font-medium">Emirates Schools Establishment | Fujairah & Sharjah, UAE</h5>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">2017 - 2020</span>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 ml-1">
+                        <li>Taught English to Cycle 2 and 3 boys, fostering a dynamic learning environment.</li>
+                        <li>Pioneered effective distance learning methodologies by integrating advanced educational technology to ensure continuity of learning.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="relative pl-4">
+                    <!-- Removing bottom border tail for the last item -->
+                    <div class="absolute w-3 h-3 bg-slate-300 rounded-full -left-[7px] top-1.5 border-2 border-white z-10"></div>
+                    <div class="absolute left-[-6px] top-3 bottom-0 w-0.5 bg-white z-0"></div>
+                    
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">PYP/MYP English & History Teacher</h4>
+                            <h5 class="text-sm text-blue-600 font-medium">German International School | Beirut, Lebanon</h5>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">2014 - 2016</span>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 ml-1">
+                        <li>Played a pivotal role in the school achieving "Excellent German School Abroad" status through a successful BLI Inspection.</li>
+                        <li>Led the complete overhaul of the English curriculum, authoring yearly plans fully aligned with IB standards.</li>
+                        <li>Taught English and Social Studies for Grades 4-7 within the IB (PYP & MYP) curriculum framework.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
