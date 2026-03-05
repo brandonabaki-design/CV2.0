@@ -23,7 +23,7 @@
         }
         
         @media print {
-            body { background-color: white; }
+            body { background-color: white; margin: 0; padding: 0; }
             .shadow-2xl { box-shadow: none !important; }
             .print-container {
                 width: 210mm;
@@ -31,6 +31,7 @@
                 margin: 0 !important;
                 padding: 0 !important;
                 overflow: hidden;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -44,14 +45,14 @@
     </button>
 
     <!-- CV Container -->
-    <div class="print-container bg-white shadow-2xl max-w-5xl w-full flex flex-col md:flex-row print:flex-row mx-auto overflow-hidden min-h-[1056px]">
+    <div class="print-container bg-white shadow-2xl max-w-4xl w-full flex flex-col md:flex-row print:flex-row mx-auto overflow-hidden">
         
         <!-- Left Sidebar -->
-        <aside class="w-full md:w-[32%] print:w-[32%] bg-[#1e293b] text-white p-8 flex flex-col gap-8 print:h-[297mm]">
+        <aside class="w-full md:w-[32%] print:w-[32%] bg-[#1e293b] text-white p-6 flex flex-col gap-6 print:h-[297mm]">
             
             <!-- Profile Image -->
-            <div class="flex justify-center mt-2">
-                <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-slate-400 shadow-lg">
+            <div class="flex justify-center mt-1">
+                <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-slate-400 shadow-lg">
                     <img src="unnamed.png" alt="Brandon A. Baki" class="w-full h-full object-cover object-top">
                 </div>
             </div>
@@ -122,17 +123,17 @@
         </aside>
 
         <!-- Right Main Content -->
-        <main class="w-full md:w-[68%] print:w-[68%] p-10 print:h-[297mm] flex flex-col gap-8 bg-white">
+        <main class="w-full md:w-[68%] print:w-[68%] p-8 print:h-[297mm] flex flex-col gap-6 bg-white">
             
             <!-- Header -->
-            <header class="border-b border-gray-200 pb-6">
-                <h1 class="text-5xl font-extrabold text-slate-800 tracking-tight">BRANDON A. BAKI</h1>
-                <h2 class="text-xl font-medium text-blue-600 tracking-widest mt-2 uppercase">Senior Educational Leader</h2>
+            <header class="border-b border-gray-200 pb-4">
+                <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">BRANDON A. BAKI</h1>
+                <h2 class="text-lg font-medium text-blue-600 tracking-widest mt-1 uppercase">Senior Educational Leader</h2>
             </header>
 
             <!-- Executive Summary -->
             <section>
-                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
                     <i data-lucide="user" class="w-5 h-5 text-blue-600"></i> Executive Summary
                 </h3>
                 <p class="text-sm text-gray-600 leading-relaxed text-justify">
@@ -141,7 +142,7 @@
             </section>
 
             <!-- Professional Experience -->
-            <section class="flex flex-col gap-5 flex-1">
+            <section class="flex flex-col gap-4 flex-1">
                 <h3 class="text-lg font-bold text-slate-800 mb-1 flex items-center gap-2 border-b border-gray-100 pb-2">
                     <i data-lucide="briefcase" class="w-5 h-5 text-blue-600"></i> Professional Experience
                 </h3>
