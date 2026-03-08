@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
@@ -34,214 +34,232 @@
                 box-sizing: border-box;
             }
         }
+
+        /* Timeline connecting line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 5px; /* Centers under the 10px wide dots */
+            top: 8px;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0; /* slate-200 */
+            z-index: 0;
+        }
+
+        /* Marketing Highlight for Metrics */
+        .metric-highlight {
+            color: #4338ca; /* indigo-700 */
+            font-weight: 800;
+        }
     </style>
 </head>
-<body class="py-10 print:py-0 flex justify-center text-gray-800">
+<body class="py-10 print:py-0 flex justify-center text-slate-800">
 
     <!-- Print / Save as PDF Button -->
-    <button onclick="window.print()" class="fixed top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg print:hidden flex items-center gap-2 z-50 transition-colors cursor-pointer">
+    <button onclick="window.print()" class="fixed top-4 right-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg print:hidden flex items-center gap-2 z-50 transition-colors cursor-pointer">
         <i data-lucide="printer" class="w-5 h-5"></i>
         <span>Save as PDF</span>
     </button>
 
     <!-- CV Container -->
-    <div class="print-container bg-white shadow-2xl max-w-4xl w-full flex flex-col md:flex-row print:flex-row mx-auto overflow-hidden">
+    <div class="print-container bg-white shadow-2xl max-w-4xl w-full mx-auto overflow-hidden p-8 print:p-8 flex flex-col relative">
         
-        <!-- Left Sidebar -->
-        <aside class="w-full md:w-[32%] print:w-[32%] bg-[#1e293b] text-white p-5 print:py-4 print:px-5 flex flex-col gap-9 print:gap-6">
+        <!-- Subtle Top Accent Border -->
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-700 via-blue-500 to-indigo-700"></div>
+
+        <!-- ================= HEADER ================= -->
+        <header class="flex flex-col md:flex-row justify-between items-center bg-white rounded-2xl p-4 print:p-3 mb-6 print:mb-5 gap-6 print:gap-4 mt-2">
             
-            <!-- Profile Image -->
-            <div class="flex justify-center mt-0">
-                <div class="w-32 h-32 rounded-full overflow-hidden border-[3px] border-slate-400 shadow-lg">
-                    <img src="unnamed.png" alt="Brandon A. Baki" class="w-full h-full object-cover object-top">
+            <!-- Left: Photo, Name, Title -->
+            <div class="flex items-center gap-6 print:gap-5">
+                <!-- Graphic Design Pop: Gradient Ring around image -->
+                <div class="relative w-32 h-32 print:w-28 print:h-28 shrink-0 rounded-full p-1 bg-gradient-to-tr from-indigo-600 to-blue-300 shadow-lg">
+                    <img src="unnamed.png" alt="Brandon A. Baki" class="w-full h-full object-cover object-top rounded-full border-4 border-white">
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="text-5xl print:text-4xl font-black text-slate-900 tracking-tighter leading-none mb-1.5 uppercase">Brandon A. Baki</h1>
+                    <h2 class="text-[15px] print:text-[14px] font-black text-indigo-600 tracking-[0.2em] uppercase">Senior Educational Leader</h2>
                 </div>
             </div>
 
-            <!-- Contact Info -->
-            <section class="flex flex-col gap-3">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-1.5">Contact</h2>
-                <div class="flex flex-col gap-2 text-[13px]">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-300"></i>
-                        <span>+971 50 789 6519</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-300"></i>
-                        <a href="mailto:brandon.abaki@gmail.com" class="hover:text-blue-300 transition-colors">brandon.abaki@gmail.com</a>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="linkedin" class="w-3.5 h-3.5 text-slate-300"></i>
-                        <a href="https://www.linkedin.com/in/brandon-a-baki-19a81735b/" target="_blank" class="hover:text-blue-300 transition-colors">linkedin.com/in/brandon-a-baki</a>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-300"></i>
-                        <span>Abu Dhabi, UAE</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="globe" class="w-3.5 h-3.5 text-slate-300"></i>
-                        <span>United States of America</span>
-                    </div>
+            <!-- Right: Contact Grid -->
+            <div class="flex flex-col gap-2 text-[12.5px] print:text-[12px] text-slate-600 font-medium">
+                <div class="flex items-center gap-3 justify-end">
+                    <span>+971 50 789 6519</span>
+                    <div class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 border border-indigo-100"><i data-lucide="phone" class="w-3.5 h-3.5 text-indigo-600"></i></div>
                 </div>
-            </section>
-
-            <!-- Education -->
-            <section class="flex flex-col gap-3">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-1.5">Education</h2>
-                <div class="flex flex-col gap-3 text-[13px]">
-                    <div class="bg-slate-800/60 border-l-[3px] border-blue-400 pl-2.5 py-1 -ml-[3px] rounded-r-sm">
-                        <h3 class="font-extrabold text-blue-300 text-sm tracking-wide">M.Ed in Education</h3>
-                        <p class="text-white font-medium">University of Wollongong</p>
-                        <p class="text-blue-300 text-[11px] mt-0.5 font-semibold">Expected March 2026</p>
-                    </div>
-                    <div class="border-l-[3px] border-slate-600 pl-2.5 -ml-[3px]">
-                        <h3 class="font-bold text-slate-300 text-sm">BA in Education</h3>
-                        <p class="text-slate-400">American University of Beirut</p>
-                        <p class="text-slate-500 text-[11px] mt-0.5">2014</p>
-                    </div>
+                <div class="flex items-center gap-3 justify-end">
+                    <a href="mailto:brandon.abaki@gmail.com" class="hover:text-indigo-800 transition-colors">brandon.abaki@gmail.com</a>
+                    <div class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 border border-indigo-100"><i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-600"></i></div>
                 </div>
-            </section>
+                <div class="flex items-center gap-3 justify-end">
+                    <a href="https://www.linkedin.com/in/brandon-a-baki-19a81735b/" target="_blank" class="hover:text-indigo-800 transition-colors">linkedin.com/in/brandon-a-baki</a>
+                    <div class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 border border-indigo-100"><i data-lucide="linkedin" class="w-3.5 h-3.5 text-indigo-600"></i></div>
+                </div>
+                <div class="flex items-center gap-3 justify-end">
+                    <span>Abu Dhabi, UAE <span class="text-indigo-600 font-bold">(US Citizen)</span></span>
+                    <div class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 border border-indigo-100"><i data-lucide="globe" class="w-3.5 h-3.5 text-indigo-600"></i></div>
+                </div>
+            </div>
+        </header>
 
-            <!-- Philosophy -->
-            <section class="flex flex-col gap-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-1.5">Philosophy</h2>
-                <p class="text-[12px] text-slate-300 leading-snug italic">
-                    "Empower educators with trust, tools, and data-driven insights. By fostering a culture of psychological safety and championing evidence-based practices, I create an ecosystem where everyone is inspired to achieve their highest potential. I do this by building collaborative and trusting relationships with colleagues to deeply inspire progress."
-                </p>
-            </section>
-
-            <!-- Toolkit / Skills (ATS Optimized) -->
-            <section class="flex flex-col gap-3">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 border-b border-slate-600 pb-1.5">Core Expertise</h2>
-                <ul class="flex flex-col gap-1.5 text-[13px] text-slate-300 list-disc list-outside ml-3.5 font-medium">
-                    <li>School Improvement (SIP/SEF)</li>
-                    <li>UAE Inspection Readiness</li>
-                    <li>Data-Driven Instruction</li>
-                    <li>Curriculum Architecture</li>
-                    <li>AI & EdTech Integration</li>
-                    <li>High-Performance Coaching</li>
-                    <li>Stakeholder Engagement</li>
-                    <li>Professional Development</li>
-                </ul>
-            </section>
-
-        </aside>
-
-        <!-- Right Main Content -->
-        <main class="w-full md:w-[68%] print:w-[68%] p-6 print:py-4 print:px-6 flex flex-col gap-4 print:gap-3 bg-white">
+        <!-- ================= MAIN CONTENT GRID ================= -->
+        <div class="grid grid-cols-1 md:grid-cols-12 print:grid-cols-12 gap-8 print:gap-6 flex-1">
             
-            <!-- Header -->
-            <header class="border-b border-gray-200 pb-3 print:pb-2">
-                <h1 class="text-3xl font-extrabold text-slate-800 tracking-tight">BRANDON A. BAKI</h1>
-                <h2 class="text-base font-medium text-blue-600 tracking-widest mt-0.5 uppercase">Senior Educational Leader</h2>
-            </header>
+            <!-- LEFT COLUMN (Experience) - Takes up 8/12 cols -->
+            <main class="md:col-span-8 print:col-span-8 flex flex-col gap-6 print:gap-5">
+                
+                <!-- Executive Profile -->
+                <section>
+                    <p class="text-[14px] print:text-[13px] text-slate-700 leading-relaxed text-justify font-medium">
+                        Senior Educational Leader with a decade of UAE experience driving institutional transformation. Proven success elevating SPEA ratings and student attainment through data-driven strategy, AI integration, and high-performance team building. Adept at bridging visionary planning with decisive execution to cultivate academic excellence.
+                    </p>
+                </section>
 
-            <!-- Executive Summary -->
-            <section>
-                <h3 class="text-base font-bold text-slate-800 mb-1.5 print:mb-1 flex items-center gap-2">
-                    <i data-lucide="user" class="w-4 h-4 text-blue-600"></i> Executive Profile
-                </h3>
-                <p class="text-[13px] print:text-[12.5px] print:leading-relaxed text-gray-600 leading-relaxed text-justify">
-                    Visionary Educational Leader with nearly a decade of UAE experience driving institutional transformation. Proven track record of elevating inspection ratings (SPEA) and student attainment through data-driven strategy, AI-powered pedagogy, and high-performance team building. Adept at bridging strategic planning with decisive execution to cultivate academic excellence and foster community engagement.
-                </p>
-            </section>
+                <!-- Professional Experience -->
+                <section class="flex flex-col flex-1">
+                    <h3 class="text-xs font-black text-slate-900 uppercase tracking-widest border-b-[3px] border-indigo-100 pb-2 mb-4 flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-indigo-600"></i> Professional Experience
+                    </h3>
 
-            <!-- Professional Experience -->
-            <section class="flex flex-col gap-3 print:gap-2 flex-1">
-                <h3 class="text-base font-bold text-slate-800 mb-0.5 print:mb-0 flex items-center gap-2 border-b border-gray-100 pb-1.5 print:pb-1">
-                    <i data-lucide="briefcase" class="w-4 h-4 text-blue-600"></i> Professional Experience
-                </h3>
-
-                <!-- Job 1 (New AIS Role) -->
-                <div class="relative pl-4 border-l-2 border-slate-200">
-                    <div class="absolute w-2.5 h-2.5 bg-blue-600 rounded-full -left-[6px] top-1.5 border-2 border-white"></div>
-                    <div class="flex justify-between items-start mb-0.5">
-                        <div>
-                            <h4 class="font-bold text-slate-800 text-sm print:text-[13px]">(K-12) Head of AI Integration & Innovation</h4>
-                            <h5 class="text-[13px] print:text-[12px] text-blue-600 font-medium">American International School | Abu Dhabi, UAE</h5>
+                    <div class="relative timeline-container flex flex-col gap-5 print:gap-4 pl-1">
+                        
+                        <!-- Job 1 -->
+                        <div class="relative pl-6">
+                            <div class="absolute w-3 h-3 bg-indigo-600 rounded-full left-0 top-1.5 border-[2px] border-white z-10 shadow-sm ring-2 ring-indigo-200"></div>
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h4 class="font-extrabold text-slate-900 text-[14px] print:text-[13px]">Head of AI Integration & Innovation</h4>
+                                <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded ml-2 whitespace-nowrap">2026 - Present</span>
+                            </div>
+                            <h5 class="text-[12.5px] print:text-[12px] text-indigo-600 font-bold mb-1.5">American International School | Abu Dhabi, UAE</h5>
+                            <ul class="list-disc list-outside ml-3.5 text-[12.5px] print:text-[12px] text-slate-700 space-y-1">
+                                <li>Architecting the K-12 AI strategic vision, bridging emerging technology with <span class="font-bold text-slate-900">core pedagogy</span>.</li>
+                                <li>Deploying <span class="font-bold text-slate-900">high-impact professional development</span> to upskill faculty in modern EdTech frameworks.</li>
+                                <li>Driving institutional innovation initiatives to position the campus as a <span class="font-bold text-slate-900">regional pioneer</span>.</li>
+                            </ul>
                         </div>
-                        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap ml-2">2026 - Present</span>
-                    </div>
-                    <ul class="list-disc list-inside text-[13px] print:text-[12px] text-gray-600 mt-1 print:mt-0.5 space-y-0.5 print:space-y-0 ml-1">
-                        <li>Architecting the school's K-12 AI strategic vision, bridging cutting-edge technology with core pedagogical objectives.</li>
-                        <li>Designing and deploying high-impact professional development to upskill faculty in emerging EdTech and AI frameworks.</li>
-                        <li>Driving institutional innovation initiatives to position the campus as a regional pioneer in future-ready education.</li>
-                    </ul>
-                </div>
 
-                <!-- Job 2 (Athena) -->
-                <div class="relative pl-4 border-l-2 border-slate-200">
-                    <div class="absolute w-2.5 h-2.5 bg-slate-300 rounded-full -left-[6px] top-1.5 border-2 border-white"></div>
-                    <div class="flex justify-between items-start mb-0.5">
-                        <div>
-                            <h4 class="font-bold text-slate-800 text-sm print:text-[13px]">(K-12) Head of Curriculum / Head of Teaching & Learning</h4>
-                            <h5 class="text-[13px] print:text-[12px] text-blue-600 font-medium">Athena Education (Al Wahda Private School) | Sharjah, UAE</h5>
+                        <!-- Job 2 -->
+                        <div class="relative pl-6">
+                            <div class="absolute w-3 h-3 bg-slate-300 rounded-full left-0 top-1.5 border-[2px] border-white z-10 ring-2 ring-slate-100"></div>
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h4 class="font-extrabold text-slate-900 text-[14px] print:text-[13px]">Head of Curriculum / Head of T&L</h4>
+                                <span class="text-[11px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded ml-2 whitespace-nowrap">2025 - 2026</span>
+                            </div>
+                            <h5 class="text-[12.5px] print:text-[12px] text-slate-500 font-bold mb-1.5">Athena Education (Al Wahda Private School) | Sharjah, UAE</h5>
+                            <ul class="list-disc list-outside ml-3.5 text-[12.5px] print:text-[12px] text-slate-700 space-y-1">
+                                <li>Pioneered inaugural <span class="font-bold text-slate-900">AI Integration Plan</span> from concept to rollout.</li>
+                                <li>Boosted student engagement by <span class="metric-highlight">26%</span> across K-12 via targeted pedagogical training strategies.</li>
+                                <li>Co-authored and executed the <span class="font-bold text-slate-900">School Improvement Plan (SIP)</span> and Self-Evaluation Form (SEF).</li>
+                            </ul>
                         </div>
-                        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap ml-2">2025 - 2026</span>
-                    </div>
-                    <ul class="list-disc list-inside text-[13px] print:text-[12px] text-gray-600 mt-1 print:mt-0.5 space-y-0.5 print:space-y-0 ml-1">
-                        <li>Pioneered the school's inaugural AI Integration Plan, managing the project from conceptualization to full-scale rollout.</li>
-                        <li>Engineered an evidence-based coaching framework to elevate teaching standards and rigorous accountability.</li>
-                        <li>Boosted student engagement by 26% across K-12 classrooms via carefully targeted pedagogical training strategies.</li>
-                        <li>Co-authored and executed the School Improvement Plan (SIP) and Self-Evaluation Form (SEF).</li>
-                    </ul>
-                </div>
 
-                <!-- Job 3 (ENS) -->
-                <div class="relative pl-4 border-l-2 border-slate-200">
-                    <div class="absolute w-2.5 h-2.5 bg-slate-300 rounded-full -left-[6px] top-1.5 border-2 border-white"></div>
-                    <div class="flex justify-between items-start mb-0.5">
-                        <div>
-                            <h4 class="font-bold text-slate-800 text-sm print:text-[13px]">PYP Educator / Teaching & Learning Policy Lead</h4>
-                            <h5 class="text-[13px] print:text-[12px] text-blue-600 font-medium">Emirates National Schools | Sharjah, UAE</h5>
+                        <!-- Job 3 -->
+                        <div class="relative pl-6">
+                            <div class="absolute w-3 h-3 bg-slate-300 rounded-full left-0 top-1.5 border-[2px] border-white z-10 ring-2 ring-slate-100"></div>
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h4 class="font-extrabold text-slate-900 text-[14px] print:text-[13px]">PYP Educator / T&L Policy Lead</h4>
+                                <span class="text-[11px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded ml-2 whitespace-nowrap">2024 - 2025</span>
+                            </div>
+                            <h5 class="text-[12.5px] print:text-[12px] text-slate-500 font-bold mb-1.5">Emirates National Schools | Sharjah, UAE</h5>
+                            <ul class="list-disc list-outside ml-3.5 text-[12.5px] print:text-[12px] text-slate-700 space-y-1">
+                                <li>Elevated the school's SPEA rating from <span class="metric-highlight">'Good' to 'Very Good'</span> through targeted academic initiatives.</li>
+                                <li>Chaired the Policy Review Team, modernizing compliance standards.</li>
+                                <li>Conducted action research on AI tool efficacy, capturing an <span class="metric-highlight">82%</span> student satisfaction rate.</li>
+                            </ul>
                         </div>
-                        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap ml-2">2024 - 2025</span>
-                    </div>
-                    <ul class="list-disc list-inside text-[13px] print:text-[12px] text-gray-600 mt-1 print:mt-0.5 space-y-0.5 print:space-y-0 ml-1">
-                        <li>Spearheaded targeted academic initiatives that directly elevated the school's SPEA rating from 'Good' to 'Very Good'.</li>
-                        <li>Chaired the Teaching & Learning Policy Review Team, modernizing pedagogical frameworks and compliance standards.</li>
-                        <li>Conducted action research on AI tool efficacy; captured an 82% student satisfaction rate to inform future tech adoption.</li>
-                    </ul>
-                </div>
 
-                <!-- Job 4 (Elite Stream) -->
-                <div class="relative pl-4 border-l-2 border-slate-200">
-                    <div class="absolute w-2.5 h-2.5 bg-slate-300 rounded-full -left-[6px] top-1.5 border-2 border-white"></div>
-                    <div class="flex justify-between items-start mb-0.5">
-                        <div>
-                            <h4 class="font-bold text-slate-800 text-sm print:text-[13px]">Head of Elite Stream</h4>
-                            <h5 class="text-[13px] print:text-[12px] text-blue-600 font-medium">Emirates Schools Establishment | Sharjah, UAE</h5>
+                        <!-- Job 4 -->
+                        <div class="relative pl-6">
+                            <div class="absolute w-3 h-3 bg-slate-300 rounded-full left-0 top-1.5 border-[2px] border-white z-10 ring-2 ring-slate-100"></div>
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h4 class="font-extrabold text-slate-900 text-[14px] print:text-[13px]">Head of Elite Stream</h4>
+                                <span class="text-[11px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded ml-2 whitespace-nowrap">2020 - 2023</span>
+                            </div>
+                            <h5 class="text-[12.5px] print:text-[12px] text-slate-500 font-bold mb-1.5">Emirates Schools Establishment | Sharjah, UAE</h5>
+                            <ul class="list-disc list-outside ml-3.5 text-[12.5px] print:text-[12px] text-slate-700 space-y-1">
+                                <li>Orchestrated data-driven improvement plans yielding an <span class="metric-highlight">11%</span> MAP score increase.</li>
+                                <li>Elevated student attainment by <span class="metric-highlight">17%</span> across two schools via needs-based professional development.</li>
+                                <li>Directed Elite Stream recruitment, enhancing community engagement through parent outreach.</li>
+                            </ul>
                         </div>
-                        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap ml-2">2020 - 2023</span>
-                    </div>
-                    <ul class="list-disc list-inside text-[13px] print:text-[12px] text-gray-600 mt-1 print:mt-0.5 space-y-0.5 print:space-y-0 ml-1">
-                        <li>Partnered with the cluster manager to orchestrate data-driven school improvement plans, yielding an 11% increase in MAP scores.</li>
-                        <li>Elevated student attainment by 17% across two schools by deploying needs-based, goal-oriented professional development.</li>
-                        <li>Directed the Elite Stream student recruitment process, enhancing community engagement through direct parent outreach.</li>
-                    </ul>
-                </div>
 
-                <!-- Job 5 (Bundled Teaching Roles) -->
-                <div class="relative pl-4">
-                    <div class="absolute w-2.5 h-2.5 bg-slate-300 rounded-full -left-[6px] top-1.5 border-2 border-white z-10"></div>
-                    <div class="absolute left-[-5px] top-3 bottom-0 w-0.5 bg-white z-0"></div>
-                    
-                    <div class="flex justify-between items-start mb-0.5">
-                        <div>
-                            <h4 class="font-bold text-slate-800 text-sm print:text-[13px]">International Educator (English & Humanities)</h4>
-                            <h5 class="text-[13px] print:text-[12px] text-blue-600 font-medium">ESE (UAE) & German International School (Lebanon)</h5>
+                        <!-- Job 5 -->
+                        <div class="relative pl-6">
+                            <div class="absolute w-3 h-3 bg-slate-300 rounded-full left-0 top-1.5 border-[2px] border-white z-10 ring-2 ring-slate-100"></div>
+                            <!-- Cover up the bottom tail of the timeline line -->
+                            <div class="absolute -left-[1px] top-4 bottom-0 w-1 bg-white z-0"></div>
+                            
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h4 class="font-extrabold text-slate-900 text-[14px] print:text-[13px]">International Educator (English & Humanities)</h4>
+                                <span class="text-[11px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded ml-2 whitespace-nowrap">2014 - 2020</span>
+                            </div>
+                            <h5 class="text-[12.5px] print:text-[12px] text-slate-500 font-bold mb-1.5">ESE (UAE) & German International School (Lebanon)</h5>
+                            <ul class="list-disc list-outside ml-3.5 text-[12.5px] print:text-[12px] text-slate-700 space-y-1">
+                                <li>Led comprehensive IB curriculum overhauls fully aligned with UAE national frameworks.</li>
+                                <li>Played pivotal role in securing <span class="metric-highlight">"Excellent German School Abroad"</span> inspection status.</li>
+                                <li>Pioneered rapid integration of advanced EdTech tools to ensure learning continuity.</li>
+                            </ul>
                         </div>
-                        <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded whitespace-nowrap ml-2">2014 - 2020</span>
+
                     </div>
-                    <ul class="list-disc list-inside text-[13px] print:text-[12px] text-gray-600 mt-1 print:mt-0.5 space-y-0.5 print:space-y-0 ml-1">
-                        <li>Led comprehensive curriculum overhauls fully aligned with rigorous IB standards and UAE national frameworks.</li>
-                        <li>Played a pivotal role in German International School achieving "Excellent German School Abroad" inspection status.</li>
-                        <li>Pioneered rapid integration of advanced EdTech tools to ensure continuity of learning during transitional periods.</li>
-                    </ul>
-                </div>
+                </section>
+            </main>
 
-            </section>
+            <!-- RIGHT COLUMN (Skills, Edu, Philosophy) - Takes up 4/12 cols -->
+            <aside class="md:col-span-4 print:col-span-4 flex flex-col gap-6 print:gap-5">
+                
+                <!-- Core Expertise -->
+                <section>
+                    <h3 class="text-xs font-black text-slate-900 uppercase tracking-widest border-b-[3px] border-indigo-100 pb-2 mb-3 flex items-center gap-2">
+                        <i data-lucide="award" class="w-4 h-4 text-indigo-600"></i> Core Expertise
+                    </h3>
+                    <div class="flex flex-col gap-2">
+                        <!-- High Contrast Badges -->
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">School Improvement (SIP/SEF)</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">UAE Inspection Readiness</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">Data-Driven Instruction</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">AI & EdTech Integration</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">High-Performance Coaching</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 border border-indigo-200 text-indigo-800 text-[12.5px] print:text-[12px] rounded font-bold shadow-sm">Curriculum Architecture</span>
+                    </div>
+                </section>
 
-        </main>
+                <!-- Education -->
+                <section>
+                    <h3 class="text-xs font-black text-slate-900 uppercase tracking-widest border-b-[3px] border-indigo-100 pb-2 mb-3 flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-600"></i> Education
+                    </h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="bg-indigo-700 text-white p-3.5 rounded-lg shadow-md border-b-4 border-indigo-900">
+                            <h4 class="font-black text-[14px] print:text-[13px] tracking-wide">M.Ed in Education</h4>
+                            <p class="text-[12px] print:text-[11.5px] text-indigo-100 font-medium mt-0.5">University of Wollongong</p>
+                            <div class="inline-block bg-white text-indigo-800 text-[10.5px] font-black px-2.5 py-0.5 rounded uppercase mt-2 shadow-sm">March 2026</div>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg">
+                            <h4 class="font-bold text-slate-900 text-[14px] print:text-[13px]">BA in Education</h4>
+                            <p class="text-[12px] print:text-[11.5px] text-slate-600 font-medium mt-0.5">American University of Beirut</p>
+                            <div class="text-[11px] font-bold text-slate-400 mt-1">2014</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Philosophy -->
+                <section class="mt-auto">
+                    <!-- Editorial Pull-Quote Style -->
+                    <div class="bg-indigo-50 rounded-xl p-5 print:p-4 border-l-4 border-indigo-600 relative">
+                        <i data-lucide="quote" class="absolute top-3 left-3 w-6 h-6 text-indigo-200 opacity-50"></i>
+                        <h3 class="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-2 ml-5">Leadership Philosophy</h3>
+                        <p class="text-[12.5px] print:text-[12px] text-slate-700 font-semibold leading-relaxed relative z-10 italic">
+                            "Empower educators with trust, tools, and data-driven insights. By fostering a culture of psychological safety, I create an ecosystem where everyone is inspired to achieve their highest potential."
+                        </p>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+
     </div>
 
     <!-- Initialize Lucide Icons -->
